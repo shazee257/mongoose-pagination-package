@@ -1,7 +1,6 @@
-<!-- code snippet -->
-
 # Mongoose Pagination Simpler (Aggregate also)
 
+```javascript
 const mongoose = require('mongoose');
 const { mongoosePlugin, mongooseAggregatePlugin, getAggregatedPaginatedData, getPaginatedData } = require('mongoose-pagination');
 
