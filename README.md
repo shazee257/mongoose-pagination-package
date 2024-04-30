@@ -7,7 +7,9 @@ const { mongoosePlugin, mongooseAggregatePlugin, getAggregatedPaginatedData, get
 const express = require('express');
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/db_dono').then(() => console.log('Connected to MongoDB')).catch((err) => console.log('Failed to connect to MongoDB', err));
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.log('Failed to connect to MongoDB', err));
 
 // any key value allowed
 const UserSchema = new mongoose.Schema({}, { strict: false });
@@ -16,12 +18,6 @@ UserSchema.plugin(mongoosePlugin);
 UserSchema.plugin(mongooseAggregatePlugin);
 
 const UserModel = mongoose.model('User', UserSchema);
-
-
-app.use((req, res, next) => {
-    console.log('req.originalUrl >>>', req.originalUrl);
-    next();
-});
 
 app.get('/', async (req, res) => {
     const query = [];
