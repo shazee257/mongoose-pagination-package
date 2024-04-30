@@ -1,4 +1,4 @@
-# Mongoose Pagination Simpler (Aggregate also)
+## Mongoose Pagination & Aggregate
 
 ```javascript
 const mongoose = require('mongoose');
