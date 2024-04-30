@@ -2,7 +2,7 @@
 
 ```javascript
 const mongoose = require('mongoose');
-const { mongoosePlugin, mongooseAggregatePlugin, getAggregatedPaginatedData, getPaginatedData } = require('mongoose-pagination');
+const { mongoosePlugin, mongooseAggregatePlugin, getAggregatedPaginatedData, getPaginatedData } = require('mongoose-pagination-v2');
 
 const express = require('express');
 const app = express();
@@ -20,8 +20,7 @@ UserSchema.plugin(mongooseAggregatePlugin);
 const UserModel = mongoose.model('User', UserSchema);
 
 app.get('/', async (req, res) => {
-    const query = [];
-    const data = await getAggregatedPaginatedData({ model: UserModel, query });
+    const data = await getAggregatedPaginatedData({ model: UserModel, query: [] });
     res.send(data);
 });
 
