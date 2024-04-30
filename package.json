@@ -1,10 +1,13 @@
 {
-  "name": "mongoose-pagination",
+  "name": "mongoose-pagination-v2",
   "version": "0.0.1",
   "description": "mongoose pagination",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/shazee257/mongoose-pagination-package"
+  },
   "scripts": {
     "build": "tsup"
   },
